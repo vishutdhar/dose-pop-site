@@ -3,43 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dose Pop is a simple medication reminder app for iPhone and iPad, built for older adults and caregivers.">
+    <meta name="description" content="Dose Pop is a simple medicine reminder app for seniors and caregivers with clear reminders, big buttons, and dose history.">
     <meta name="keywords" content="Dose Pop, medication reminder, medicine reminder, pill reminder, senior health, caregiver, iPhone, iPad">
     <meta name="author" content="Vishut Dhar">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Dose Pop - Simple Medicine Reminders">
-    <meta property="og:description" content="Big buttons, clear reminders, and dose history for older adults and caregivers.">
+    <meta property="og:description" content="Clear reminders, big buttons, dose history, and caregiver backup for seniors and families.">
     <meta property="og:url" content="https://vishutdhar.github.io/dose-pop-site/">
 
     <link rel="canonical" href="https://vishutdhar.github.io/dose-pop-site/">
     <meta name="theme-color" content="#0D9488">
-    <title>Dose Pop - Simple Medicine Reminders</title>
+    <title>Dose Pop - Simple Medicine Reminders for Seniors</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="hero">
-        <div class="card">
-            <p class="eyebrow">Dose Pop</p>
-            <h1>Simple medicine reminders for seniors and caregivers.</h1>
-            <p class="lede">Dose Pop helps people remember medications with big buttons, plain-language reminders, dose confirmation history, and a calm interface that stays out of the way.</p>
-            <div class="actions">
-                <a class="button" href="support.html">Get Support</a>
-                <a class="button secondary" href="privacy.html">Privacy Policy</a>
+    <header class="site-header" aria-label="Dose Pop">
+        <a class="brand" href="index.html" aria-label="Dose Pop home">
+            <span class="brand-mark" aria-hidden="true">✓</span>
+            <span>Dose Pop</span>
+        </a>
+        <nav aria-label="Site links">
+            <a href="#features">Features</a>
+            <a href="#caregivers">Caregivers</a>
+            <a href="support.html">Support</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Medicine reminders made simple</p>
+                <h1>Simple medicine reminders for seniors and caregivers.</h1>
+                <p class="lede">Dose Pop helps you know what to take, when to take it, and whether it was already taken — without clutter, streaks, or confusing screens.</p>
+                <div class="actions" aria-label="Primary actions">
+                    <a class="button" href="support.html">Get Support</a>
+                    <a class="button secondary" href="#features">See Features</a>
+                </div>
+                <p class="availability">iPhone and iPad app. App Store link coming soon.</p>
             </div>
-            <section class="features" aria-label="Dose Pop features">
-                <div><strong>Big actions</strong><span>Clear “I Took It” buttons and simple choices.</span></div>
-                <div><strong>Dose history</strong><span>See when a medication was marked taken.</span></div>
-                <div><strong>Private by design</strong><span>Local-first data, no tracking, no ads.</span></div>
-            </section>
-            <p class="note">Dose Pop is a reminder tool, not medical advice. Always follow your doctor or pharmacist’s instructions.</p>
-        </div>
+
+            <div class="phone-card" aria-label="Dose Pop app preview placeholder">
+                <div class="phone-frame">
+                    <div class="phone-top"></div>
+                    <p class="today">Today · 8:00 AM</p>
+                    <h2>Blood pressure pill</h2>
+                    <p class="reminder">Time to take your medicine.</p>
+                    <button type="button">Take now</button>
+                    <div class="status-row">
+                        <span class="dot" aria-hidden="true"></span>
+                        <span>Taken at 8:04 AM</span>
+                    </div>
+                </div>
+                <p class="placeholder-note">Screenshots can drop into this section later.</p>
+            </div>
+        </section>
+
+        <section class="trust-strip" aria-label="Dose Pop principles">
+            <div>
+                <strong>Big buttons</strong>
+                <span>One obvious action when it matters.</span>
+            </div>
+            <div>
+                <strong>Plain wording</strong>
+                <span>“Time to take your medicine,” not app jargon.</span>
+            </div>
+            <div>
+                <strong>No clutter</strong>
+                <span>No streaks, ads, or dopamine loops.</span>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">Built for confidence</p>
+                <h2>Everything is designed to reduce second-guessing.</h2>
+            </div>
+            <div class="feature-grid">
+                <article>
+                    <h3>Huge “Take now” button</h3>
+                    <p>Medication time should have one clear next step. Dose Pop keeps the main action obvious and easy to tap.</p>
+                </article>
+                <article>
+                    <h3>Dose confirmation history</h3>
+                    <p>See simple proof like “Taken at 8:04 AM” so nobody has to wonder if a dose was already taken.</p>
+                </article>
+                <article>
+                    <h3>Persistent reminders</h3>
+                    <p>Reminders can keep coming back until the dose is marked taken, skipped, or delayed.</p>
+                </article>
+                <article>
+                    <h3>Clear missed-dose choices</h3>
+                    <p>When something is missed, the choices stay simple: taken, skipped, or remind me later.</p>
+                </article>
+                <article>
+                    <h3>Large text friendly</h3>
+                    <p>High contrast, large type, and simple layouts make the app easier to read at a glance.</p>
+                </article>
+                <article>
+                    <h3>Simple med setup</h3>
+                    <p>Add the medicine, choose the time, and move on. Bottle-photo support can make setup even easier.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="caregivers" class="caregiver-section">
+            <div>
+                <p class="eyebrow">For family backup</p>
+                <h2>Caregivers get peace of mind without hovering.</h2>
+                <p>Dose Pop is made for families who want a simple backup system. A senior can handle daily reminders independently, while caregiver alerts can help family step in if a dose is missed.</p>
+            </div>
+            <ul class="check-list">
+                <li>Optional missed-dose caregiver alerts</li>
+                <li>Plain-language reminder text</li>
+                <li>Today’s medicine status at a glance</li>
+                <li>Privacy-minded, no ads, no tracking-first business model</li>
+            </ul>
+        </section>
+
+        <section class="cta-section">
+            <p class="eyebrow">Dose Pop</p>
+            <h2>Medication reminders should feel calm, clear, and dependable.</h2>
+            <p>That is the whole product: help someone take the right medicine at the right time, then make it easy to confirm it happened.</p>
+            <div class="actions center">
+                <a class="button" href="support.html">Contact Support</a>
+                <a class="button secondary" href="privacy.html">Read Privacy Policy</a>
+            </div>
+            <p class="medical-note">Dose Pop is a reminder tool, not medical advice. Always follow your doctor or pharmacist’s instructions.</p>
+        </section>
     </main>
+
     <footer>
+        <span>© 2026 Dose Pop</span>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Use</a>
         <a href="support.html">Support</a>
