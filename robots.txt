@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vishutdhar.github.io/dose-pop-site/sitemap.xml
