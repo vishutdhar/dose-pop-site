@@ -47,19 +47,41 @@
                 <p class="availability">iPhone and iPad app. App Store link coming soon.</p>
             </div>
 
-            <div class="phone-card" aria-label="Dose Pop app preview placeholder">
+            <div class="phone-card" aria-label="Dose Pop app preview">
                 <div class="phone-frame">
                     <div class="phone-top"></div>
-                    <p class="today">Today · 8:00 AM</p>
-                    <h2>Blood pressure pill</h2>
-                    <p class="reminder">Time to take your medicine.</p>
-                    <button type="button">Take now</button>
-                    <div class="status-row">
-                        <span class="dot" aria-hidden="true"></span>
-                        <span>Taken at 8:04 AM</span>
+                    <div class="today-head">
+                        <p class="today">Today</p>
+                        <span class="today-day">Saturday</span>
                     </div>
+                    <ul class="dose-list" aria-label="Today's medicines">
+                        <li class="dose taken">
+                            <span class="pill-dot" style="background:#3B82F6" aria-hidden="true"></span>
+                            <div class="dose-meta">
+                                <strong>Lisinopril 10mg</strong>
+                                <span>8:00 AM &middot; Taken</span>
+                            </div>
+                            <span class="dose-check" aria-hidden="true">&check;</span>
+                        </li>
+                        <li class="dose due">
+                            <span class="pill-dot" style="background:#F59E0B" aria-hidden="true"></span>
+                            <div class="dose-meta">
+                                <strong>Metformin 500mg</strong>
+                                <span>1:00 PM</span>
+                            </div>
+                            <span class="dose-take">I Took It</span>
+                        </li>
+                        <li class="dose later">
+                            <span class="pill-dot" style="background:#10B981" aria-hidden="true"></span>
+                            <div class="dose-meta">
+                                <strong>Atorvastatin 20mg</strong>
+                                <span>9:00 PM</span>
+                            </div>
+                            <span class="dose-later">Later</span>
+                        </li>
+                    </ul>
                 </div>
-                <p class="placeholder-note">Screenshots can drop into this section later.</p>
+                <p class="placeholder-note">Final App Store screenshots will replace this preview.</p>
             </div>
         </section>
 
@@ -85,28 +107,34 @@
             </div>
             <div class="feature-grid">
                 <article>
-                    <h3>Huge “Take now” button</h3>
+                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></span>
+                    <h3>Huge &ldquo;Take now&rdquo; button</h3>
                     <p>Medication time should have one clear next step. Dose Pop keeps the main action obvious and easy to tap.</p>
                 </article>
                 <article>
+                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h12"/></svg></span>
                     <h3>Dose confirmation history</h3>
-                    <p>See simple proof like “Taken at 8:04 AM” so nobody has to wonder if a dose was already taken.</p>
+                    <p>See simple proof like &ldquo;Taken at 8:04 AM&rdquo; so nobody has to wonder if a dose was already taken.</p>
                 </article>
                 <article>
+                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
                     <h3>Persistent reminders</h3>
                     <p>Reminders can keep coming back until the dose is marked taken, skipped, or delayed.</p>
                 </article>
                 <article>
+                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M5 12H2"/><path d="M22 12h-3"/><path d="M5 5l2 2"/><path d="M17 17l2 2"/><path d="M5 19l2-2"/><path d="M17 7l2-2"/><circle cx="12" cy="12" r="4"/></svg></span>
                     <h3>Clear missed-dose choices</h3>
                     <p>When something is missed, the choices stay simple: taken, skipped, or remind me later.</p>
                 </article>
                 <article>
+                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h12"/><path d="M4 12h16"/><path d="M4 18h8"/></svg></span>
                     <h3>Large text friendly</h3>
                     <p>High contrast, large type, and simple layouts make the app easier to read at a glance.</p>
                 </article>
                 <article>
+                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>
                     <h3>Simple med setup</h3>
-                    <p>Add the medicine, choose the time, and move on. Bottle-photo support can make setup even easier.</p>
+                    <p>Add the medicine, choose the time, and move on. Search a built-in database of real medication names so setup stays fast.</p>
                 </article>
             </div>
         </section>
