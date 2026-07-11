@@ -14,6 +14,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
 
 body {
     margin: 0;
@@ -459,7 +460,7 @@ footer span { color: var(--sage); font-weight: 800; }
     .caregiver-copy .check-list,
     .caregiver-copy p { margin-left: auto; margin-right: auto; }
     .caregiver-section { text-align: center; }
-    .caregiver-visual { order: -1; }
+    .caregiver-visual { order: 2; }
 }
 
 @media (max-width: 680px) {
