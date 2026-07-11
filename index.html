@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dose Pop is a simple medicine reminder app for seniors and caregivers with clear reminders, big buttons, and dose history.">
+    <meta name="description" content="Dose Pop is a simple medicine reminder app for seniors and caregivers. Large print, big buttons, and dose history. Caregiver alerts are coming in the next update.">
     <meta name="keywords" content="Dose Pop, medication reminder, medicine reminder, pill reminder, senior health, caregiver, iPhone, iPad">
     <meta name="author" content="Vishut Dhar">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Dose Pop - Simple Medicine Reminders">
-    <meta property="og:description" content="Clear reminders, big buttons, dose history, and caregiver backup for seniors and families.">
+    <meta property="og:title" content="Dose Pop | Simple medicine reminders for seniors">
+    <meta property="og:description" content="Clear reminders in large print with big buttons. Made for seniors and the families who look after them.">
     <meta property="og:url" content="https://vishutdhar.github.io/dose-pop-site/">
+    <meta property="og:image" content="https://vishutdhar.github.io/dose-pop-site/assets/og-hero.png">
 
     <link rel="canonical" href="https://vishutdhar.github.io/dose-pop-site/">
-    <meta name="theme-color" content="#0D9488">
-    <title>Dose Pop - Simple Medicine Reminders for Seniors</title>
+    <meta name="theme-color" content="#0C1514">
+    <title>Dose Pop | Simple medicine reminders for seniors</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="site-header" aria-label="Dose Pop">
         <a class="brand" href="index.html" aria-label="Dose Pop home">
-            <span class="brand-mark" aria-hidden="true">✓</span>
+            <span class="capsule-mark" aria-hidden="true"></span>
             <span>Dose Pop</span>
         </a>
         <nav aria-label="Site links">
@@ -37,84 +38,62 @@
     <main>
         <section class="hero">
             <div class="hero-copy">
-                <p class="eyebrow">Medicine reminders made simple</p>
-                <h1>Simple medicine reminders for seniors and caregivers.</h1>
-                <p class="lede">Dose Pop helps you know what to take, when to take it, and whether it was already taken — without clutter, streaks, or confusing screens.</p>
+                <span class="capsule-mark hero-mark" aria-hidden="true"></span>
+                <p class="eyebrow">For iPhone and iPad</p>
+                <h1><span class="mint">Never miss</span> a medicine.</h1>
+                <p class="lede">Dose Pop reminds you what to take and when, in large print with big buttons. Made for seniors and the families who look after them.</p>
                 <div class="actions" aria-label="Primary actions">
-                    <a class="button" href="support.html">Get Support</a>
-                    <a class="button secondary" href="#features">See Features</a>
+                    <a class="button app-store-button" href="https://apps.apple.com/app/id6774796964" aria-label="Download Dose Pop on the App Store">
+                        <svg class="apple-logo" viewBox="0 0 384 512" width="22" height="26" aria-hidden="true" focusable="false"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                        <span class="app-store-text">
+                            <small>Download on the</small>
+                            <strong>App Store</strong>
+                        </span>
+                    </a>
+                    <a class="button secondary" href="#features">See features</a>
                 </div>
-                <p class="availability">iPhone and iPad app. App Store link coming soon.</p>
+                <p class="availability">Pay once, $4.99. No subscriptions. No accounts.</p>
             </div>
 
-            <div class="phone-card" aria-label="Dose Pop app preview">
-                <div class="phone-frame">
-                    <div class="phone-top"></div>
-                    <div class="today-head">
-                        <p class="today">Today</p>
-                        <span class="today-day">Saturday</span>
+            <div class="hero-visual">
+                <div class="device-frame hero-frame">
+                    <div class="screen">
+                        <img src="assets/today.png" alt="The Dose Pop today screen listing each medicine with its time and a large button to mark it taken." width="552" height="1200" fetchpriority="high">
                     </div>
-                    <ul class="dose-list" aria-label="Today's medicines">
-                        <li class="dose taken">
-                            <span class="pill-dot" style="background:#3B82F6" aria-hidden="true"></span>
-                            <div class="dose-meta">
-                                <strong>Lisinopril 10mg</strong>
-                                <span>8:00 AM &middot; Taken</span>
-                            </div>
-                            <span class="dose-check" aria-hidden="true">&check;</span>
-                        </li>
-                        <li class="dose due">
-                            <span class="pill-dot" style="background:#F59E0B" aria-hidden="true"></span>
-                            <div class="dose-meta">
-                                <strong>Metformin 500mg</strong>
-                                <span>1:00 PM</span>
-                            </div>
-                            <span class="dose-take">I Took It</span>
-                        </li>
-                        <li class="dose later">
-                            <span class="pill-dot" style="background:#10B981" aria-hidden="true"></span>
-                            <div class="dose-meta">
-                                <strong>Atorvastatin 20mg</strong>
-                                <span>9:00 PM</span>
-                            </div>
-                            <span class="dose-later">Later</span>
-                        </li>
-                    </ul>
                 </div>
-                <p class="placeholder-note">Final App Store screenshots will replace this preview.</p>
             </div>
         </section>
 
         <section class="trust-strip" aria-label="Dose Pop principles">
             <div>
                 <strong>Big buttons</strong>
-                <span>One obvious action when it matters.</span>
+                <span>One clear action when it is time to take a dose.</span>
             </div>
             <div>
                 <strong>Plain wording</strong>
-                <span>“Time to take your medicine,” not app jargon.</span>
+                <span>Simple, everyday language, never app jargon.</span>
             </div>
             <div>
                 <strong>No clutter</strong>
-                <span>No streaks, ads, or dopamine loops.</span>
+                <span>No streaks, no ads, no busy screens.</span>
             </div>
         </section>
 
         <section id="features" class="section">
             <div class="section-heading">
                 <p class="eyebrow">Built for confidence</p>
-                <h2>Everything is designed to reduce second-guessing.</h2>
+                <h2>Everything is designed to reduce <span class="mint">second guessing.</span></h2>
             </div>
             <div class="feature-grid">
                 <article>
                     <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></span>
-                    <h3>Huge &ldquo;Take now&rdquo; button</h3>
-                    <p>Medication time should have one clear next step. Dose Pop keeps the main action obvious and easy to tap.</p>
+                    <h3>Big take now button</h3>
+                    <p>Medication time should have one clear next step. Dose Pop keeps the main action large and easy to tap.</p>
                 </article>
                 <article>
                     <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h12"/></svg></span>
                     <h3>Dose confirmation history</h3>
-                    <p>See simple proof like &ldquo;Taken at 8:04 AM&rdquo; so nobody has to wonder if a dose was already taken.</p>
+                    <p>See simple proof like taken at 8:04 AM, so nobody has to wonder whether a dose was already taken.</p>
                 </article>
                 <article>
                     <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
@@ -123,7 +102,7 @@
                 </article>
                 <article>
                     <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M5 12H2"/><path d="M22 12h-3"/><path d="M5 5l2 2"/><path d="M17 17l2 2"/><path d="M5 19l2-2"/><path d="M17 7l2-2"/><circle cx="12" cy="12" r="4"/></svg></span>
-                    <h3>Clear missed-dose choices</h3>
+                    <h3>Clear missed dose choices</h3>
                     <p>When something is missed, the choices stay simple: taken, skipped, or remind me later.</p>
                 </article>
                 <article>
@@ -134,39 +113,71 @@
                 <article>
                     <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>
                     <h3>Simple med setup</h3>
-                    <p>Add the medicine, choose the time, and move on. Search a built-in database of real medication names so setup stays fast.</p>
+                    <p>Add the medicine, choose the time, and move on. Search a built in list of real medication names so setup stays fast.</p>
                 </article>
             </div>
         </section>
 
+        <section class="showcase" aria-label="More Dose Pop screens">
+            <figure class="showcase-item">
+                <div class="device-frame">
+                    <div class="screen">
+                        <img src="assets/refill.png" alt="A Dose Pop screen showing how many pills are left and the date a refill will be needed." width="552" height="1200" loading="lazy">
+                    </div>
+                </div>
+                <figcaption>It tells you when to refill.</figcaption>
+            </figure>
+            <figure class="showcase-item">
+                <div class="device-frame">
+                    <div class="screen">
+                        <img src="assets/history.png" alt="A Dose Pop history screen showing a list of past doses and when each one was taken." width="552" height="1200" loading="lazy">
+                    </div>
+                </div>
+                <figcaption>See how you are doing.</figcaption>
+            </figure>
+        </section>
+
         <section id="caregivers" class="caregiver-section">
-            <div>
+            <div class="caregiver-copy">
                 <p class="eyebrow">For family backup</p>
-                <h2>Caregivers get peace of mind without hovering.</h2>
-                <p>Dose Pop is made for families who want a simple backup system. A senior can handle daily reminders independently, while caregiver alerts can help family step in if a dose is missed.</p>
+                <span class="pill-badge">Coming in the next update</span>
+                <h2>Your family can <span class="mint">watch over you.</span></h2>
+                <p>Soon you will be able to share your medicine schedule with one family member. They get an email if a dose looks missed. Dosages are never shared, and you can stop any time.</p>
+                <ul class="check-list">
+                    <li>One family member gets missed dose emails</li>
+                    <li>Dosages are never shown</li>
+                    <li>Stop sharing any time</li>
+                    <li>No ads and no tracking</li>
+                </ul>
             </div>
-            <ul class="check-list">
-                <li>Optional missed-dose caregiver alerts</li>
-                <li>Plain-language reminder text</li>
-                <li>Today’s medicine status at a glance</li>
-                <li>Privacy-minded, no ads, no tracking-first business model</li>
-            </ul>
+            <div class="caregiver-visual">
+                <div class="device-frame">
+                    <div class="screen">
+                        <img src="assets/consent.png" alt="A Dose Pop sharing screen where you choose to let one family member see your schedule." width="552" height="1200" loading="lazy">
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="cta-section">
-            <p class="eyebrow">Dose Pop</p>
-            <h2>Medication reminders should feel calm, clear, and dependable.</h2>
-            <p>That is the whole product: help someone take the right medicine at the right time, then make it easy to confirm it happened.</p>
+            <span class="capsule-mark cta-mark" aria-hidden="true"></span>
+            <h2>Pay once. <span class="mint">Yours forever.</span></h2>
+            <p>One price of $4.99 unlocks Dose Pop for good. No subscriptions, no accounts, and no upsells.</p>
             <div class="actions center">
-                <a class="button" href="support.html">Contact Support</a>
-                <a class="button secondary" href="privacy.html">Read Privacy Policy</a>
+                <a class="button app-store-button" href="https://apps.apple.com/app/id6774796964" aria-label="Download Dose Pop on the App Store">
+                    <svg class="apple-logo" viewBox="0 0 384 512" width="22" height="26" aria-hidden="true" focusable="false"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                    <span class="app-store-text">
+                        <small>Download on the</small>
+                        <strong>App Store</strong>
+                    </span>
+                </a>
             </div>
-            <p class="medical-note">Dose Pop is a reminder tool, not medical advice. Always follow your doctor or pharmacist’s instructions.</p>
+            <p class="medical-note">Dose Pop is a reminder tool, not medical advice. Always follow the instructions from your doctor or pharmacist.</p>
         </section>
     </main>
 
     <footer>
-        <span>© 2026 Dose Pop</span>
+        <span>&copy; 2026 Dose Pop</span>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Use</a>
         <a href="support.html">Support</a>
