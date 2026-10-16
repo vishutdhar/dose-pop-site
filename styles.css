@@ -331,7 +331,11 @@ a:hover { color: var(--accent); }
 
 .hero-media[data-state="taken"] .tap-target { width: 85.38%; }
 
-.tap-target:focus-visible { outline-offset: 2px; }
+/* On the light screenshot a teal ring would fall under 3:1, so focus here is ground ink. */
+.tap-target:focus-visible {
+    outline: 3px solid var(--ground);
+    outline-offset: 2px;
+}
 
 /* A neutral touch mark, like the one iOS draws for a touch, so it reads on the light screen. */
 .ring {

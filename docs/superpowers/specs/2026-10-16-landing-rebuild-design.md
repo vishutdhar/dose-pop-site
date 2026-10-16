@@ -70,7 +70,7 @@ Scale (brief tokens, with the audience adjustments for this site):
  ---------------------------------- ----------------------------------------
  Answer from the reminder          | Big buttons, large print
  ---------------------------------- ----------------------------------------
- A record of every dose            | A warning before pills run out
+ A record of every dose            | A warning before you run out
  ---------------------------------- ----------------------------------------
  Any schedule                      | Doses on the Home Screen
 
