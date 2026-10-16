@@ -1,202 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dose Pop is a simple medicine reminder app for seniors and caregivers. Large print, big buttons, dose history, and reminders that sound even on silent.">
-    <meta name="keywords" content="Dose Pop, medication reminder, medicine reminder, pill reminder, senior health, caregiver, iPhone, iPad">
-    <meta name="author" content="Vishut Dhar">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dose Pop: a medicine reminder with one big button</title>
+    <meta name="description" content="Dose Pop is a medicine reminder for iPhone and iPad with one big I Took It button, large print, reminders that can sound on silent, and opt in alerts for one family member. $4.99, paid once.">
+    <link rel="canonical" href="https://dosepop.vishutdhar.com/">
+    <meta name="theme-color" content="#07080B">
+    <meta name="color-scheme" content="dark">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Dose Pop | Simple medicine reminders for seniors">
-    <meta property="og:description" content="Clear reminders in large print with big buttons. Made for seniors and the families who look after them.">
-    <meta property="og:url" content="https://vishutdhar.github.io/dose-pop-site/">
-    <meta property="og:image" content="https://vishutdhar.github.io/dose-pop-site/assets/og-hero.png">
+    <meta property="og:site_name" content="Dose Pop">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://dosepop.vishutdhar.com/">
+    <meta property="og:title" content="Dose Pop: a medicine reminder with one big button">
+    <meta property="og:description" content="Large print, plain words, and one big I Took It button. Made for older adults and the families who help them.">
+    <meta property="og:image" content="https://dosepop.vishutdhar.com/assets/og-20261016.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Dose Pop. Medicine reminders with one big button. The Today screen with a large green I Took It button.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dose Pop: a medicine reminder with one big button">
+    <meta name="twitter:description" content="Large print, plain words, and one big I Took It button. Made for older adults and the families who help them.">
+    <meta name="twitter:image" content="https://dosepop.vishutdhar.com/assets/og-20261016.png">
+    <meta name="apple-itunes-app" content="app-id=6774796964">
 
-    <link rel="canonical" href="https://vishutdhar.github.io/dose-pop-site/">
-    <meta name="theme-color" content="#0C1514">
-    <title>Dose Pop | Simple medicine reminders for seniors</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preload" href="fonts/atkinson-hyperlegible-next-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Dose Pop",
+        "alternateName": "Dose Pop: Pill Reminder",
+        "operatingSystem": "iOS 18 or later",
+        "applicationCategory": "MedicalApplication",
+        "description": "A medicine reminder for iPhone and iPad with one big I Took It button, large print, reminders that can sound on silent, and opt in alerts for one family member.",
+        "url": "https://dosepop.vishutdhar.com/",
+        "installUrl": "https://apps.apple.com/us/app/dose-pop-pill-reminder/id6774796964",
+        "image": "https://dosepop.vishutdhar.com/assets/icon-192.png",
+        "offers": {
+            "@type": "Offer",
+            "price": "4.99",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
 </head>
 <body>
-    <header class="site-header" aria-label="Dose Pop">
-        <a class="brand" href="index.html" aria-label="Dose Pop home">
-            <span class="capsule-mark" aria-hidden="true"></span>
-            <span>Dose Pop</span>
-        </a>
-        <nav aria-label="Site links">
-            <a href="#features">Features</a>
-            <a href="#caregivers">Caregivers</a>
-            <a href="support.html">Support</a>
-        </nav>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a class="brand" href="./">
+                <img src="assets/icon-80.webp" alt="" width="40" height="40">
+                <span>Dose Pop</span>
+            </a>
+            <nav class="site-nav" aria-label="Site">
+                <a href="#family">For families</a>
+                <a href="support">Support</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-copy">
-                <span class="capsule-mark hero-mark" aria-hidden="true"></span>
-                <p class="eyebrow">For iPhone and iPad</p>
-                <h1><span class="mint">Never miss</span> a medicine.</h1>
-                <p class="lede">Dose Pop reminds you what to take and when, in large print with big buttons. Made for seniors and the families who look after them.</p>
-                <div class="actions" aria-label="Primary actions">
-                    <a class="button app-store-button" href="https://apps.apple.com/app/id6774796964" aria-label="Download Dose Pop on the App Store">
-                        <svg class="apple-logo" viewBox="0 0 384 512" width="22" height="26" aria-hidden="true" focusable="false"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                        <span class="app-store-text">
-                            <small>Download on the</small>
-                            <strong>App Store</strong>
-                        </span>
-                    </a>
-                    <a class="button secondary" href="#features">See features</a>
-                </div>
-                <p class="availability">Pay once, $4.99. No subscriptions. No accounts.</p>
-            </div>
-
-            <div class="hero-visual">
-                <div class="device-frame hero-frame">
-                    <div class="screen">
-                        <img src="assets/today.png" alt="The Dose Pop today screen listing each medicine with its time and a large button to mark it taken." width="552" height="1200" fetchpriority="high">
+    <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="wrap">
+                <div class="hero-copy">
+                    <h1 id="hero-title">Medicine reminders with one big button.</h1>
+                    <p class="lede">When a medicine is due, Dose Pop reminds you. One tap on I&nbsp;Took&nbsp;It saves the dose. Large print and plain words, for older adults and the families who help them. $4.99, paid once, no subscription.</p>
+                    <div class="hero-actions">
+                        <a class="button" href="https://apps.apple.com/us/app/dose-pop-pill-reminder/id6774796964">Download on the App Store</a>
+                    </div>
+                    <div class="send">
+                        <p>Send to a parent:</p>
+                        <a class="button-quiet" href="sms:?&amp;body=Dose%20Pop%20is%20a%20medicine%20reminder%20with%20one%20big%20button%20and%20large%20print.%20https%3A%2F%2Fdosepop.vishutdhar.com%2F" aria-label="Send this page to a parent by text message">Text</a>
+                        <a class="button-quiet" href="mailto:?subject=A%20medicine%20reminder%20with%20one%20big%20button&amp;body=Dose%20Pop%20is%20a%20medicine%20reminder%20for%20iPhone%20and%20iPad%20with%20large%20print%20and%20one%20big%20I%20Took%20It%20button.%20https%3A%2F%2Fdosepop.vishutdhar.com%2F" aria-label="Send this page to a parent by email">Email</a>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="trust-strip" aria-label="Dose Pop principles">
-            <div>
-                <strong>Big buttons</strong>
-                <span>One clear action when it is time to take a dose.</span>
-            </div>
-            <div>
-                <strong>Plain wording</strong>
-                <span>Simple, everyday language, never app jargon.</span>
-            </div>
-            <div>
-                <strong>No clutter</strong>
-                <span>No streaks, no ads, no busy screens.</span>
-            </div>
-        </section>
-
-        <section id="features" class="section">
-            <div class="section-heading">
-                <p class="eyebrow">Built for confidence</p>
-                <h2>Everything is designed to reduce <span class="mint">second guessing.</span></h2>
-            </div>
-            <div class="feature-grid">
-                <article>
-                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></span>
-                    <h3>Big take now button</h3>
-                    <p>Medication time should have one clear next step. Dose Pop keeps the main action large and easy to tap.</p>
-                </article>
-                <article>
-                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h12"/></svg></span>
-                    <h3>Dose confirmation history</h3>
-                    <p>See simple proof like taken at 8:04 AM, so nobody has to wonder whether a dose was already taken.</p>
-                </article>
-                <article>
-                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-                    <h3>Persistent reminders</h3>
-                    <p>Reminders can keep coming back until the dose is marked taken, skipped, or delayed.</p>
-                </article>
-                <article>
-                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
-                    <h3>Reminders that sound on silent</h3>
-                    <p>A phone left on silent should not mean a missed dose. Turn on Sound on Silent and reminders come through anyway, at a volume you choose.</p>
-                </article>
-                <article>
-                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><path d="M12 18v3"/><path d="M5 12H2"/><path d="M22 12h-3"/><path d="M5 5l2 2"/><path d="M17 17l2 2"/><path d="M5 19l2-2"/><path d="M17 7l2-2"/><circle cx="12" cy="12" r="4"/></svg></span>
-                    <h3>Clear missed dose choices</h3>
-                    <p>When something is missed, the choices stay simple: taken, skipped, or remind me later.</p>
-                </article>
-                <article>
-                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h12"/><path d="M4 12h16"/><path d="M4 18h8"/></svg></span>
-                    <h3>Large text friendly</h3>
-                    <p>High contrast, large type, and simple layouts make the app easier to read at a glance.</p>
-                </article>
-                <article>
-                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>
-                    <h3>Simple med setup</h3>
-                    <p>Add the medicine, choose the time, and move on. Search a built in list of real medication names so setup stays fast.</p>
-                </article>
-                <article>
-                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M3 11h18"/></svg></span>
-                    <h3>Every few days or weeks</h3>
-                    <p>Not every medicine is daily. Set one for every 17 days, every 3 weeks, or every 2 months, and Dose Pop reminds you on exactly the right days.</p>
-                </article>
-                <article>
-                    <span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/></svg></span>
-                    <h3>Travel does not move your days</h3>
-                    <p>Cross a time zone and your dose days stay where they were. A medicine due Tuesday is still due Tuesday, wherever you are.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="showcase" aria-label="More Dose Pop screens">
-            <figure class="showcase-item">
-                <div class="device-frame">
-                    <div class="screen">
-                        <img src="assets/refill.png" alt="A Dose Pop screen showing how many pills are left and the date a refill will be needed." width="552" height="1200" loading="lazy">
+                <figure class="hero-media" data-state="pending">
+                    <figcaption class="shot-caption">The Today screen in Dose Pop.</figcaption>
+                    <div class="phone">
+                        <div class="screen">
+                            <picture class="state-pending">
+                                <source type="image/webp" srcset="assets/today-pending-20261016-480.webp 480w, assets/today-pending-20261016.webp 760w" sizes="(max-width: 860px) 60vw, 368px">
+                                <img src="assets/today-pending-20261016.png" width="760" height="921" fetchpriority="high" alt="The Dose Pop Today screen for Friday, October 16. Metformin, 500mg, is due at 9:00 AM and marked Pending, with a large green I Took It button beside a Skip button.">
+                            </picture>
+                            <picture class="state-taken" aria-hidden="true">
+                                <source type="image/webp" srcset="assets/today-taken-20261016-480.webp 480w, assets/today-taken-20261016.webp 760w" sizes="(max-width: 860px) 60vw, 368px">
+                                <img src="assets/today-taken-20261016.png" width="760" height="921" alt="The same screen after one tap. Metformin is marked Taken, and one Undo button replaces the two buttons.">
+                            </picture>
+                            <span class="ring" aria-hidden="true"></span>
+                            <button class="tap-target" type="button" hidden aria-label="Try I Took It on the picture"></button>
+                        </div>
                     </div>
-                </div>
-                <figcaption>It tells you when to refill.</figcaption>
-            </figure>
-            <figure class="showcase-item">
-                <div class="device-frame">
-                    <div class="screen">
-                        <img src="assets/history.png" alt="A Dose Pop history screen showing a list of past doses and when each one was taken." width="552" height="1200" loading="lazy">
-                    </div>
-                </div>
-                <figcaption>See how you are doing.</figcaption>
-            </figure>
+                </figure>
+            </div>
+            <hr class="hero-rule">
         </section>
 
-        <section id="caregivers" class="caregiver-section">
-            <div class="caregiver-copy">
-                <p class="eyebrow">For family backup</p>
-                <span class="pill-badge">Optional and off by default</span>
-                <h2>Your family can <span class="mint">watch over you.</span></h2>
-                <p>Share your medicine schedule with one family member. They get an email if a dose looks missed. Dosages are never shared, and you can stop any time.</p>
-                <ul class="check-list">
-                    <li>One family member gets missed dose emails</li>
-                    <li>Dosages are never shown</li>
-                    <li>Stop sharing any time</li>
-                    <li>No ads and no tracking</li>
+        <section class="section section-grid" aria-labelledby="features-title">
+            <div class="wrap">
+                <h2 id="features-title">Hard to miss. Easy to use.</h2>
+                <ul class="grid-rows">
+                    <li>
+                        <h3>Sounds even on silent</h3>
+                        <p>Turn on Sound on Silent and allow it once. Reminders then play when the phone is muted or in a Focus mode, at a volume you choose.</p>
+                    </li>
+                    <li>
+                        <h3>A second alert if a dose is missed</h3>
+                        <p>If a dose is not marked, a follow up alert comes after a wait you choose. The wait starts at 30&nbsp;minutes.</p>
+                    </li>
+                    <li>
+                        <h3>Answer from the reminder</h3>
+                        <p>Tap I&nbsp;Took&nbsp;It, Snooze or Skip right on the notification. There is no need to open the app.</p>
+                    </li>
+                    <li>
+                        <h3>Big buttons, large print</h3>
+                        <p>The buttons are large and easy to hit. The words grow with the iPhone text size setting, and the buttons stack when the text is at its largest.</p>
+                    </li>
+                    <li>
+                        <h3>A record of every dose</h3>
+                        <p>History shows each dose and the time it was taken, so nobody has to guess whether a pill was already taken.</p>
+                    </li>
+                    <li>
+                        <h3>A warning before pills run out</h3>
+                        <p>Enter how many pills are in the bottle. When about a week is left, the Today screen says it is time to refill.</p>
+                    </li>
+                    <li>
+                        <h3>Any schedule</h3>
+                        <p>Every day, two or three times a day, every other day, chosen weekdays, as needed, or every few days, weeks or months.</p>
+                    </li>
+                    <li>
+                        <h3>Doses on the Home Screen</h3>
+                        <p>Widgets show the day&rsquo;s doses on the Home Screen and the Lock Screen, without opening the app.</p>
+                    </li>
                 </ul>
             </div>
-            <div class="caregiver-visual">
-                <div class="device-frame">
-                    <div class="screen">
-                        <img src="assets/consent.png" alt="A Dose Pop sharing screen where you choose to let one family member see your schedule." width="552" height="1200" loading="lazy">
-                    </div>
+        </section>
+
+        <section class="section" id="family" aria-labelledby="family-title">
+            <div class="wrap">
+                <div class="section-copy">
+                    <h2 id="family-title">Let one family member keep watch.</h2>
+                    <p class="intro">Caregiver Alerts stay off until the person taking the medicine turns them on and picks one family member or helper. Nothing is shared before that.</p>
+                    <ul class="rows">
+                        <li>
+                            <h3>They see what was taken</h3>
+                            <p>The names of the medicines, and whether each dose was taken that day.</p>
+                        </li>
+                        <li>
+                            <h3>Dosages are never shown</h3>
+                            <p>They never see how much of each medicine is taken.</p>
+                        </li>
+                        <li>
+                            <h3>An email if a dose looks missed</h3>
+                            <p>When a dose is still not marked after the wait, they get an email, so they can call and check in.</p>
+                        </li>
+                        <li>
+                            <h3>Stop sharing any time</h3>
+                            <p>Sharing ends when you choose, and the link they were sent stops working.</p>
+                        </li>
+                    </ul>
                 </div>
+                <figure class="section-media">
+                    <picture>
+                        <source type="image/webp" srcset="assets/consent-20260711-360.webp 360w, assets/consent-20260711.webp 552w" sizes="(max-width: 860px) 60vw, 300px">
+                        <img src="assets/consent.png" width="552" height="1200" loading="lazy" decoding="async" alt="The sharing screen Dose Pop shows before anything is shared. Sarah will see the names of your medicines and whether you took them each day. Dosages are never shown. They will get an email if a dose looks missed. You can stop sharing any time. Buttons: Share with Sarah, and Not Now.">
+                    </picture>
+                </figure>
             </div>
         </section>
 
-        <section class="cta-section">
-            <span class="capsule-mark cta-mark" aria-hidden="true"></span>
-            <h2>Pay once. <span class="mint">Yours forever.</span></h2>
-            <p>One price of $4.99 unlocks Dose Pop for good. No subscriptions, no accounts, and no upsells.</p>
-            <div class="actions center">
-                <a class="button app-store-button" href="https://apps.apple.com/app/id6774796964" aria-label="Download Dose Pop on the App Store">
-                    <svg class="apple-logo" viewBox="0 0 384 512" width="22" height="26" aria-hidden="true" focusable="false"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                    <span class="app-store-text">
-                        <small>Download on the</small>
-                        <strong>App Store</strong>
-                    </span>
-                </a>
+        <section class="price" aria-labelledby="price-title">
+            <div class="wrap">
+                <h2 id="price-title" class="visually-hidden">Price</h2>
+                <div class="price-row">
+                    <p class="price-figure">$4.99</p>
+                    <p class="price-terms"><strong>Paid once, no subscription.</strong> No account to set up, and no ads.</p>
+                    <a class="button" href="https://apps.apple.com/us/app/dose-pop-pill-reminder/id6774796964">Download on the App Store</a>
+                </div>
+                <p class="medical-note">Dose Pop is a reminder, not medical advice. Always follow the instructions from your doctor or pharmacist.</p>
             </div>
-            <p class="medical-note">Dose Pop is a reminder tool, not medical advice. Always follow the instructions from your doctor or pharmacist.</p>
         </section>
     </main>
 
-    <footer>
-        <span>&copy; 2026 Dose Pop</span>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
-        <a href="support.html">Support</a>
-        <a href="https://freedom-terminal.com">A Freedom Terminal product</a>
+    <footer class="site-footer">
+        <div class="wrap">
+            <div>
+                <ul class="footer-links">
+                    <li><a href="privacy">Privacy</a></li>
+                    <li><a href="terms">Terms</a></li>
+                    <li><a href="support">Support</a></li>
+                    <li><a href="mailto:support@freedom-terminal.com">support@freedom-terminal.com</a></li>
+                </ul>
+                <div class="footer-meta">
+                    <a href="https://freedom-terminal.com/">A Freedom Terminal product</a>
+                    <p>&copy; 2026 Dose Pop</p>
+                </div>
+            </div>
+            <a class="footer-store" href="https://apps.apple.com/us/app/dose-pop-pill-reminder/id6774796964">
+                <img src="assets/app-store-badge.svg" width="150" height="50" alt="Download on the App Store">
+            </a>
+        </div>
     </footer>
+
+    <script>
+    (function () {
+        var media = document.querySelector('.hero-media');
+        if (!media) return;
+        var button = media.querySelector('.tap-target');
+        var caption = media.querySelector('.shot-caption');
+        var ring = media.querySelector('.ring');
+        var screen = media.querySelector('.screen');
+        var pending = media.querySelector('.state-pending');
+        var taken = media.querySelector('.state-taken');
+        var TRY = 'Try it. Tap I\u00a0Took\u00a0It.';
+
+        function show(state) {
+            var isTaken = state === 'taken';
+            media.setAttribute('data-state', state);
+            pending.setAttribute('aria-hidden', isTaken ? 'true' : 'false');
+            taken.setAttribute('aria-hidden', isTaken ? 'false' : 'true');
+            button.setAttribute('aria-label', isTaken ? 'Try Undo on the picture' : 'Try I Took It on the picture');
+            caption.textContent = isTaken ? 'Taken. Tap Undo to try it again.' : TRY;
+        }
+
+        caption.textContent = TRY;
+        caption.setAttribute('aria-live', 'polite');
+        button.hidden = false;
+
+        button.addEventListener('click', function () {
+            var b = button.getBoundingClientRect();
+            var s = screen.getBoundingClientRect();
+            ring.style.left = ((b.left + b.width / 2 - s.left) / s.width * 100) + '%';
+            ring.style.top = ((b.top + b.height / 2 - s.top) / s.height * 100) + '%';
+            ring.classList.remove('is-on');
+            void ring.offsetWidth;
+            ring.classList.add('is-on');
+            show(media.getAttribute('data-state') === 'taken' ? 'pending' : 'taken');
+        });
+    })();
+    </script>
 </body>
 </html>
