@@ -156,17 +156,28 @@ iOS Safari frames).
    ignores perspective entirely in that mode (a 200px perspective changed nothing), while
    its computed geometry matched Chromium exactly. iOS Safari in the simulator renders the
    scene in true 3D with the labels inside the edge, so no change was made for it.
+7. Review: the card's overflow clip, there for its rounded corners, cut the press target's
+   48px hit area to about 45px on a 320px screen. The card is now rounded through its
+   pictures instead. Measuring it found a second defect: a finished press animation left on
+   the card stopped the hit area reaching past the button, so after one press Undo was only
+   as tall as drawn (24px at 320). The push now runs as a script animation that leaves
+   nothing behind; dropping the class instead had replayed the card's load lift. The hit
+   area now measures 51 to 52px in both states at 320, 390 and 1440, and putting the clip
+   back fails the same check at 320.
+8. With the touch mark inside the button, it showed at the middle of the card, because the
+   button widens into Undo the moment the dose is taken. It now sits on the card at the
+   pressed button's centre, as it did in pass 1.
 
 ## 7. Verification
 
 - The press works at every pose: clicked at the projected centre of the button, and through
   the accessible button, at scroll poses 0, 0.5 and 1, with the pointer at both corners and
   the centre, in Chromium and WebKit at 1440 and 390; hit tested on the lifted card in iOS
-  Safari. Keyboard: Tab reaches the target after Email, Enter takes the dose, Space undoes it.
+  Safari. The hit area is at least 48px tall in both states at 320, 390 and 1440. Keyboard: Tab reaches the target after Email, Enter takes the dose, Space undoes it.
 - No horizontal scroll from 320 to 1920 wide on any page, in either scheme.
 - The HTML validator passes every page; no console messages in a fresh browser.
 - Page audit on the local server (performance, accessibility, best practices, search): home
   100 in all four on mobile and desktop, and on mobile with the dark scheme forced; privacy,
   terms and support 100 on mobile. Mobile total blocking time 0 ms, layout shift 0, largest
   paint 1.7 s (the hero plate).
-- The inline script is 2.4 KB minified.
+- The inline script is 2.6 KB minified.
