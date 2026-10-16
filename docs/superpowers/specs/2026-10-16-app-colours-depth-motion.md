@@ -164,8 +164,9 @@ iOS Safari frames).
   the centre, in Chromium and WebKit at 1440 and 390; hit tested on the lifted card in iOS
   Safari. Keyboard: Tab reaches the target after Email, Enter takes the dose, Space undoes it.
 - No horizontal scroll from 320 to 1920 wide on any page, in either scheme.
-- html-validate clean on every page; no console messages in a fresh browser.
-- Lighthouse, local server: home 100 in all four categories on mobile and desktop, and on
-  mobile with the dark scheme forced; privacy, terms and support 100 on mobile. Mobile
-  total blocking time 0 ms, layout shift 0, LCP 1.7 s (the hero plate).
+- The HTML validator passes every page; no console messages in a fresh browser.
+- Page audit on the local server (performance, accessibility, best practices, search): home
+  100 in all four on mobile and desktop, and on mobile with the dark scheme forced; privacy,
+  terms and support 100 on mobile. Mobile total blocking time 0 ms, layout shift 0, largest
+  paint 1.7 s (the hero plate).
 - The inline script is 2.4 KB minified.
