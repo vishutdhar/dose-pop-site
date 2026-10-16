@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://vishutdhar.github.io/dose-pop-site/</loc>
-        <lastmod>2026-04-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
+        <loc>https://dosepop.vishutdhar.com/</loc>
+        <lastmod>2026-10-16</lastmod>
     </url>
     <url>
-        <loc>https://vishutdhar.github.io/dose-pop-site/privacy.html</loc>
-        <lastmod>2026-04-25</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://dosepop.vishutdhar.com/privacy</loc>
+        <lastmod>2026-10-02</lastmod>
     </url>
     <url>
-        <loc>https://vishutdhar.github.io/dose-pop-site/terms.html</loc>
+        <loc>https://dosepop.vishutdhar.com/terms</loc>
         <lastmod>2026-04-25</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://vishutdhar.github.io/dose-pop-site/support.html</loc>
-        <lastmod>2026-04-25</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://dosepop.vishutdhar.com/support</loc>
+        <lastmod>2026-07-19</lastmod>
     </url>
 </urlset>
