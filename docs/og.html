@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <title>Dose Pop social card</title>
+    <style>
+        @font-face {
+            font-family: "Atkinson Hyperlegible Next";
+            src: url("../fonts/atkinson-hyperlegible-next-latin.woff2") format("woff2");
+            font-weight: 200 800;
+        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; }
+        body {
+            width: 1200px;
+            height: 630px;
+            overflow: hidden;
+            background: #07080B;
+            color: #CDD0D4;
+            font-family: "Atkinson Hyperlegible Next", sans-serif;
+        }
+        .card {
+            position: relative;
+            width: 1200px;
+            height: 630px;
+            padding: 72px 80px;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            column-gap: 64px;
+        }
+        .brand { display: flex; align-items: center; gap: 16px; color: #F4F5F6; font-size: 30px; font-weight: 700; }
+        .brand img { width: 56px; height: 56px; border-radius: 13px; }
+        h1 { margin: 56px 0 0; color: #F4F5F6; font-size: 72px; line-height: 1.04; font-weight: 700; letter-spacing: -0.012em; }
+        p { margin: 28px 0 0; font-size: 28px; line-height: 1.4; }
+        .phone {
+            position: absolute;
+            right: 80px;
+            bottom: 0;
+            width: 400px;
+            padding: 11px 11px 0;
+            background: #0F1116;
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            border-bottom: 0;
+            border-radius: 60px 60px 0 0;
+        }
+        .screen { height: 515px; overflow: hidden; border-radius: 50px 50px 0 0; background: #FAFAF9; }
+        .screen img { display: block; width: 100%; }
+        .rule { position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: rgba(255, 255, 255, 0.11); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div>
+            <div class="brand"><img src="../assets/icon-192.png" alt="">Dose Pop</div>
+            <h1>Medicine reminders with one big button.</h1>
+            <p>Large print and plain words.<br>For iPhone and iPad.</p>
+        </div>
+    </div>
+    <div class="phone"><div class="screen"><img src="../assets/today-pending-20261016.png" alt=""></div></div>
+    <div class="rule"></div>
+</body>
+</html>
