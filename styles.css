@@ -1,5 +1,7 @@
-/* Dose Pop site. One typeface, one accent, rows and hairlines.
-   Design plan: docs/superpowers/specs/2026-10-16-landing-rebuild-design.md */
+/* Dose Pop site. The app's own colours, one typeface, rows and hairlines.
+   Pass 1 plan: docs/superpowers/specs/2026-10-16-landing-rebuild-design.md
+   Pass 2 plan (palette sources, the hero scene, the motion score):
+   docs/superpowers/specs/2026-10-16-app-colours-depth-motion.md */
 
 @font-face {
     font-family: "Atkinson Hyperlegible Next";
@@ -10,17 +12,28 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* Light is the app's default appearance; every value is from AppColors.swift
+   or the AccentColor asset, or derived inside the app's own stone family. */
 :root {
-    color-scheme: dark;
+    color-scheme: light dark;
 
-    --ground: #07080B;
-    --surface: #0F1116;
-    --surface-2: #15181F;
-    --ink-heading: #F4F5F6;
-    --ink: #CDD0D4;
-    --muted: #9BA1A8;
-    --accent: #6DDFD3;
-    --hairline: rgba(255, 255, 255, 0.11);
+    --ground: #FAFAF9;            /* ppBackground */
+    --surface: #F5F5F4;           /* ppSurface */
+    --ink-heading: #1C1917;       /* ppTextPrimary, APCA Lc 101 */
+    --ink: #44403C;               /* stone 700, Lc 91 */
+    --muted: #78716C;             /* ppTextSecondary, Lc 70 */
+    --accent: #0F766E;            /* ppPrimaryDark, the app's primary button fill */
+    --accent-ink: #FFFFFF;        /* the app's button text, Lc 82 on the fill */
+    --accent-hover: #115E59;
+    --accent-text: #0F766E;       /* links on hover, focus ring, Lc 74 */
+    --accent-line: #0D9488;       /* AccentColor: underlines and the dose ring */
+    --green: #16A34A;             /* ppSuccess, the I Took It button */
+    --hairline: rgba(28, 25, 23, 0.14);
+    --quiet-border: rgba(28, 25, 23, 0.48);
+
+    --phone: #1C1917;
+    --phone-edge: #44403C;
+    --phone-rim: rgba(28, 25, 23, 0);
 
     --font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
@@ -43,8 +56,32 @@
     --cols: minmax(0, 7fr) minmax(0, 5fr);
     --col-gap: 64px;
     --phone-shot: clamp(240px, 215px + 6.63vw, 300px);
-    --hero-shot: clamp(240px, 183.9px + 14.38vw, 368px);
+    --hero-shot: clamp(240px, 64px + 21.5vw, 340px);
     --tap: 48px;
+}
+
+/* Dark follows the app's dark appearance: ppBackgroundDark, ppSurfaceDark,
+   the dark AccentColor, ppPrimaryLight for the fill, ppCardBorder for lines. */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ground: #1C1917;        /* ppBackgroundDark */
+        --surface: #292524;       /* ppSurfaceDark */
+        --ink-heading: #FAFAF9;   /* Lc 103 */
+        --ink: #E7E5E4;           /* Lc 90 */
+        --muted: #A8A29E;         /* ppTextTertiary, Lc 51 */
+        --accent: #5EEAD4;        /* ppPrimaryLight */
+        --accent-ink: #1C1917;    /* Lc 80 on the fill */
+        --accent-hover: #99F6E4;
+        --accent-text: #5EEAD4;
+        --accent-line: #14B8A6;   /* AccentColor, dark appearance */
+        --green: #16A34A;
+        --hairline: rgba(255, 255, 255, 0.14);   /* ppCardBorder */
+        --quiet-border: rgba(255, 255, 255, 0.4);
+
+        --phone: #0C0A09;
+        --phone-edge: #44403C;
+        --phone-rim: rgba(255, 255, 255, 0.14);
+    }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -82,15 +119,15 @@ p { margin: 0; text-wrap: pretty; }
 a {
     color: var(--ink-heading);
     text-decoration-line: underline;
-    text-decoration-color: var(--accent);
+    text-decoration-color: var(--accent-line);
     text-decoration-thickness: 2px;
     text-underline-offset: 0.22em;
 }
 
-a:hover { color: var(--accent); }
+a:hover { color: var(--accent-text); }
 
 :focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--accent-text);
     outline-offset: 3px;
 }
 
@@ -109,7 +146,7 @@ a:hover { color: var(--accent); }
     z-index: 10;
     padding: 12px 20px;
     background: var(--accent);
-    color: var(--ground);
+    color: var(--accent-ink);
     font-weight: 700;
     text-decoration: none;
     border-radius: 0 0 8px 8px;
@@ -118,7 +155,7 @@ a:hover { color: var(--accent); }
 }
 
 .skip-link:focus { transform: translateY(0); }
-.skip-link:hover { color: var(--ground); }
+.skip-link:hover { color: var(--accent-ink); }
 
 /* Header */
 
@@ -172,7 +209,7 @@ a:hover { color: var(--accent); }
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"],
-.footer-links a[aria-current="page"] { color: var(--ink-heading); text-decoration: underline; text-decoration-color: var(--accent); }
+.footer-links a[aria-current="page"] { color: var(--ink-heading); text-decoration: underline; text-decoration-color: var(--accent-line); }
 
 /* Buttons */
 
@@ -184,7 +221,7 @@ a:hover { color: var(--accent); }
     padding: 12px 28px;
     border-radius: 12px;
     background: var(--accent);
-    color: var(--ground);
+    color: var(--accent-ink);
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 1.25;
@@ -192,7 +229,7 @@ a:hover { color: var(--accent); }
     text-decoration: none;
 }
 
-.button:hover { color: var(--ground); background: #8BE7DD; }
+.button:hover { color: var(--accent-ink); background: var(--accent-hover); }
 
 .button-quiet {
     display: inline-flex;
@@ -200,16 +237,18 @@ a:hover { color: var(--accent); }
     justify-content: center;
     min-height: var(--tap);
     padding: 8px 18px;
-    border: 1px solid rgba(255, 255, 255, 0.24);
+    border: 1px solid var(--quiet-border);
     border-radius: 10px;
     color: var(--ink-heading);
     font-weight: 700;
     text-decoration: none;
 }
 
-.button-quiet:hover { color: var(--ink-heading); border-color: var(--accent); }
+.button-quiet:hover { color: var(--ink-heading); border-color: var(--accent-text); }
 
 /* Hero */
+
+.hero { overflow-x: clip; }
 
 .hero .wrap {
     display: grid;
@@ -256,63 +295,224 @@ a:hover { color: var(--accent); }
 
 .send p { margin-right: 4px; }
 
+/* The hero scene. Three planes in one 3D context, all pivoting on one contact
+   point: the middle of the phone's base, where it meets the hero rule.
+     background  the day strip, set back
+     subject     the phone, standing on the rule, with the clean plate as its screen
+     foreground  the real dose card, lifted off the screen toward the reader
+   Geometry comes from the 1320 wide capture: one capture pixel is var(--sw) / 1320.
+   The card sits at (48, 918), 1224 by 485; the visible screen is the top 1600 rows;
+   the plate runs to row 1950 so the phone body continues below the rule. */
+
 .hero-media {
+    --w: var(--hero-shot);                   /* phone width */
+    --sw: calc(var(--w) - 20px);             /* screen width inside a 10px bezel */
+    --hv: calc(10px + var(--sw) * 1600 / 1320);  /* visible height, base to rule */
+    --phone-x: calc(100% - var(--w));        /* phone's left edge inside the stage */
+    --lift: calc(var(--w) * 0.16);
+    --depth: calc(var(--w) * 3);
+    --turn: -16deg;
+    --lean: 7deg;
+    --p: 0;
+    --rx: 0deg;
+    --ry: 0deg;
+
     align-self: end;
-    justify-self: end;
-    width: var(--hero-shot);
+    min-width: 0;
     margin: 0;
 }
 
 .shot-caption {
-    margin-bottom: 16px;
+    width: var(--w);
+    margin: 0 0 16px auto;
     color: var(--ink);
     font-size: var(--fs-small);
     line-height: 1.5;
     min-height: 1.5em;
 }
 
-/* The phone rises out of the hero's bottom rule: no bottom bezel, cut flat. */
+/* The stage clips only at the rule; the planes may run past its sides. */
+.stage {
+    position: relative;
+    height: var(--hv);
+    perspective: var(--depth);
+    perspective-origin: calc(var(--phone-x) + var(--w) / 2) 40%;
+    clip-path: inset(-100vh -100vw 0 -100vw);
+}
+
+.rig {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transform-origin: calc(var(--phone-x) + var(--w) / 2) 100%;
+    transform: rotateX(var(--rx)) rotateY(var(--ry));
+}
+
+/* Background plane: the morning, one line an hour, the 9 AM line level with
+   the dose card. Pushed back, then scaled by the same factor so its labels
+   still render at 16px and its lines land where they are laid out. */
+.strip-plane {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -16px;
+    right: calc(-1 * var(--gutter));
+    transform-style: preserve-3d;
+    transform-origin: calc(100% - var(--gutter) - var(--w) / 2) 40%;
+    transform: translateZ(calc(var(--w) * -0.35)) scale(1.1167) translateY(calc(var(--p) * var(--w) * 0.035));
+}
+
+.strip {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.strip li {
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* The 9 AM line (index 3) sits on the card's centre row, 1160 in the capture. */
+    top: calc(10px + var(--sw) * 1160 / 1320 + (var(--i) - 3) * var(--w) * 0.135);
+    height: 1px;
+    background: var(--hairline);
+}
+
+.strip span {
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    color: var(--muted);
+    font-size: var(--fs-small);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.dose-mark {
+    position: absolute;
+    left: 46px;
+    top: -7px;
+    width: 15px;
+    height: 15px;
+    border: 3px solid var(--accent-line);
+    border-radius: 50%;
+    background: var(--ground);
+}
+
+.hero-media[data-state="taken"] .dose-mark {
+    border-color: var(--green);
+    background: var(--green);
+}
+
+.phone-rise {
+    position: absolute;
+    top: 0;
+    left: var(--phone-x);
+    width: var(--w);
+    transform-style: preserve-3d;
+}
+
 .phone {
     position: relative;
+    transform-style: preserve-3d;
+    transform-origin: 50% var(--hv);
+    transform:
+        rotateY(calc(var(--turn) * (1 - var(--p))))
+        rotateX(calc(var(--lean) * (1 - var(--p))));
+}
+
+/* Front face, cut by the rule: no bottom bezel ever shows. */
+.bezel {
     padding: 10px 10px 0;
-    background: var(--surface);
-    border: 1px solid var(--hairline);
-    border-bottom: 0;
-    border-radius: calc(var(--hero-shot) * 0.15) calc(var(--hero-shot) * 0.15) 0 0;
+    background: var(--phone);
+    border-radius: calc(var(--w) * 0.15) calc(var(--w) * 0.15) 0 0;
+    box-shadow: inset 0 0 0 1px var(--phone-rim);
 }
 
 .screen {
     position: relative;
     overflow: hidden;
-    border-radius: calc(var(--hero-shot) * 0.125) calc(var(--hero-shot) * 0.125) 0 0;
-    aspect-ratio: 760 / 921;
+    border-radius: calc(var(--w) * 0.125) calc(var(--w) * 0.125) 0 0;
+    aspect-ratio: 760 / 1123;
     background: #FAFAF9;
 }
 
-.screen picture,
 .screen img {
+    width: 100%;
+    height: 100%;
+}
+
+/* The phone's right side, turned square to the front so it shows as the phone turns. */
+.edge {
+    position: absolute;
+    top: calc(var(--w) * 0.15);
+    bottom: 0;
+    left: 100%;
+    width: calc(var(--w) * 0.045);
+    background: var(--phone-edge);
+    transform-origin: 0 50%;
+    transform: rotateY(90deg);
+}
+
+/* The card's shadow lies on the screen under it: offset down and right, blurred. */
+.lift-shadow {
+    position: absolute;
+    left: calc(var(--sw) * 48 / 1320);
+    top: calc(var(--sw) * 918 / 1320);
+    width: calc(var(--sw) * 1224 / 1320);
+    height: calc(var(--sw) * 485 / 1320);
+    border-radius: calc(var(--sw) * 48 / 1320);
+    background: rgba(28, 25, 23, 0.22);
+    filter: blur(calc(var(--w) * 0.03));
+    transform: translate(calc(var(--w) * 0.012), calc(var(--w) * 0.04));
+}
+
+.card-plane {
+    position: absolute;
+    left: calc(10px + var(--sw) * 48 / 1320);
+    top: calc(10px + var(--sw) * 918 / 1320);
+    width: calc(var(--sw) * 1224 / 1320);
+    height: calc(var(--sw) * 485 / 1320);
+    transform-style: preserve-3d;
+    transform: translateZ(var(--lift));
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius: calc(var(--sw) * 48 / 1320);
+    background: #F5F5F4;
+}
+
+.card picture,
+.card img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
 }
 
-.screen .state-taken { opacity: 0; }
+.card .state-taken { opacity: 0; }
 
 .hero-media[data-state="taken"] .state-taken { opacity: 1; }
 
-/* The press target sits on the real button in the capture. The capture is
-   1320 by 1600: I Took It spans x 96 to 635, Undo x 96 to 1223, both y 1186 to 1354. */
+/* The press target sits on the real button in the card: I Took It spans
+   x 96 to 636 and y 1186 to 1355 in the capture, Undo x 96 to 1224. In card
+   terms (origin 48, 918; 1224 by 485) that is left 3.92%, top 55.26%,
+   width 44.12% or 92.16%, height 34.85%. */
 .tap-target {
     position: absolute;
-    left: 7.27%;
-    top: 74.125%;
-    width: 40.83%;
-    height: 10.5%;
+    left: 3.92%;
+    top: 55.26%;
+    width: 44.12%;
+    height: 34.85%;
     padding: 0;
     margin: 0;
     border: 0;
-    border-radius: calc(var(--hero-shot) * 0.027);
+    border-radius: calc(var(--sw) * 36 / 1320);
     background: transparent;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -329,38 +529,27 @@ a:hover { color: var(--accent); }
     transform: translateY(-50%);
 }
 
-.hero-media[data-state="taken"] .tap-target { width: 85.38%; }
+.hero-media[data-state="taken"] .tap-target { width: 92.16%; }
 
-/* On the light screenshot a teal ring would fall under 3:1, so focus here is ground ink. */
+/* The screenshot is light in both schemes, so focus here is the app's ink. */
 .tap-target:focus-visible {
-    outline: 3px solid var(--ground);
+    outline: 3px solid #1C1917;
     outline-offset: 2px;
 }
 
-/* A neutral touch mark, like the one iOS draws for a touch, so it reads on the light screen. */
+/* A neutral touch mark, like the one iOS draws for a touch. */
 .ring {
     position: absolute;
-    width: 16%;
+    left: 50%;
+    top: 50%;
+    width: calc(var(--sw) * 0.16);
     aspect-ratio: 1;
-    background: rgba(7, 8, 11, 0.16);
-    border: 2px solid rgba(7, 8, 11, 0.32);
+    background: rgba(28, 25, 23, 0.16);
+    border: 2px solid rgba(28, 25, 23, 0.32);
     border-radius: 50%;
     opacity: 0;
     pointer-events: none;
     transform: translate(-50%, -50%) scale(0.4);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .screen .state-taken,
-    .screen .state-pending { transition: opacity 220ms ease-out; }
-
-    .ring.is-on { animation: press 480ms ease-out; }
-}
-
-@keyframes press {
-    0% { opacity: 1; transform: translate(-50%, -50%) scale(0.6); }
-    40% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    100% { opacity: 0; transform: translate(-50%, -50%) scale(1.25); }
 }
 
 .hero-rule {
@@ -421,6 +610,7 @@ a:hover { color: var(--accent); }
     justify-self: end;
     width: var(--phone-shot);
     margin: 0;
+    perspective: 1000px;
 }
 
 .section-media img {
@@ -429,7 +619,8 @@ a:hover { color: var(--accent); }
     border: 1px solid var(--hairline);
 }
 
-/* Feature grid: the same two grid lines as the hero, rows divided by hairlines. */
+/* Feature grid: the same two grid lines as the hero, rows divided by hairlines.
+   Each row's hairline is its own element, so it can be drawn. */
 
 .section-grid .wrap { display: block; }
 
@@ -444,8 +635,19 @@ a:hover { color: var(--accent); }
 }
 
 .grid-rows li {
+    position: relative;
     padding-top: 24px;
-    border-top: 1px solid var(--hairline);
+}
+
+.grid-rows li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--hairline);
+    transform-origin: 0 50%;
 }
 
 .grid-rows h3 {
@@ -478,7 +680,10 @@ a:hover { color: var(--accent); }
     font-weight: 700;
     line-height: 1.06;
     letter-spacing: -0.012em;
+    clip-path: inset(0);
 }
+
+.price-figure span { display: inline-block; }
 
 .price-terms {
     font-size: var(--fs-lede);
@@ -527,7 +732,7 @@ a:hover { color: var(--accent); }
 }
 
 .footer-links a:hover,
-.footer-meta a:hover { color: var(--ink-heading); text-decoration: underline; text-decoration-color: var(--accent); }
+.footer-meta a:hover { color: var(--ink-heading); text-decoration: underline; text-decoration-color: var(--accent-line); }
 
 .footer-meta {
     display: flex;
@@ -548,7 +753,15 @@ a:hover { color: var(--accent); }
 
 .footer-store img { width: 150px; height: auto; }
 
-/* Narrow screens: one column, phone at no more than 60% of the screen. */
+/* Narrow screens: one column, phone at no more than 60% of the screen.
+   The scene is art directed for the phone: the phone hangs on the left grid
+   line and the day strip runs out to its right, labels at the far end. */
+
+/* The narrowest two column widths: the strip starts 8px nearer the copy so
+   the 9 AM mark keeps clear of the phone's edge. */
+@media (min-width: 861px) and (max-width: 1023px) {
+    .strip-plane { left: -24px; }
+}
 
 @media (max-width: 860px) {
     :root { --col-gap: 0px; }
@@ -560,12 +773,23 @@ a:hover { color: var(--accent); }
     .hero-copy { padding-bottom: 40px; }
 
     .hero-media {
-        justify-self: start;
-        width: min(var(--hero-shot), 60vw);
+        --w: min(var(--hero-shot), 60vw);
+        --phone-x: 0px;
     }
 
-    .phone { border-radius: calc(min(var(--hero-shot), 60vw) * 0.15) calc(min(var(--hero-shot), 60vw) * 0.15) 0 0; }
-    .screen { border-radius: calc(min(var(--hero-shot), 60vw) * 0.125) calc(min(var(--hero-shot), 60vw) * 0.125) 0 0; }
+    .shot-caption { width: auto; margin-left: 0; }
+
+    .strip-plane {
+        left: calc(var(--w) / 2);
+        transform-origin: 0 40%;
+    }
+
+    .strip span {
+        left: auto;
+        right: var(--gutter);
+    }
+
+    .dose-mark { left: calc(var(--w) / 2 + 16px); }
 
     .section-media {
         justify-self: start;
@@ -603,4 +827,109 @@ a:hover { color: var(--accent); }
 /* Display Zoom widths: the nav drops under the brand; its text lines up with the brand. */
 @media (max-width: 359px) {
     .site-nav { margin-left: -8px; }
+}
+
+/* Motion. Everything below runs only when the visitor has not asked for less
+   motion. Transform, opacity and clip-path only; every transition names them.
+   `.motion` is set in the head before first paint; `.reveal` is set by the
+   script once the section observer is running, so without script every
+   section is simply shown. */
+
+@media (prefers-reduced-motion: no-preference) {
+    .button,
+    .button-quiet { transition: transform 140ms ease-out; }
+
+    .button:hover,
+    .button-quiet:hover { transform: translateY(-1px); }
+
+    .button:active,
+    .button-quiet:active { transform: translateY(0) scale(0.98); }
+
+    /* Hero load: the planes settle, then the copy appears. */
+    .motion .strip { animation: strip-in 760ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+    .motion .phone-rise { animation: phone-rise 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 60ms both; }
+    .motion .card { animation: card-lift 620ms cubic-bezier(0.2, 0.8, 0.2, 1) 520ms both; }
+    .motion .lift-shadow { animation: shadow-in 620ms cubic-bezier(0.2, 0.8, 0.2, 1) 520ms both; }
+    .motion .hero h1,
+    .motion .lede,
+    .motion .hero-actions,
+    .motion .send,
+    .motion .shot-caption { animation: copy-in 480ms ease-out both; }
+    .motion .hero h1 { animation-delay: 500ms; }
+    .motion .lede { animation-delay: 570ms; }
+    .motion .hero-actions { animation-delay: 640ms; }
+    .motion .send { animation-delay: 700ms; }
+    .motion .shot-caption { animation-delay: 760ms; }
+
+    /* The press: the card is pushed toward the screen and springs back. */
+    .card.is-pressed { animation: card-press 380ms cubic-bezier(0.3, 0.7, 0.3, 1); }
+    .ring.is-on { animation: press 480ms ease-out; }
+    .card picture { transition: opacity 220ms ease-out; }
+    .hero-media[data-state="taken"] .dose-mark { animation: mark-fill 360ms ease-out; }
+
+    /* Feature rows wipe in along their own hairline. */
+    .reveal .grid-rows li::before { transition: transform 560ms cubic-bezier(0.4, 0, 0.2, 1); }
+    /* Both ends are inset() so the wipe interpolates; a clip-path cannot
+       transition to none. The 0.25em bleed keeps descenders clear. */
+    .reveal .grid-rows li > * {
+        clip-path: inset(-0.25em 0 -0.25em 0);
+        transition: clip-path 520ms cubic-bezier(0.4, 0, 0.2, 1) 180ms;
+    }
+    .reveal .grid-rows li:not(.is-in)::before { transform: scaleX(0); }
+    .reveal .grid-rows li:not(.is-in) > * { clip-path: inset(-0.25em 100% -0.25em 0); }
+    .reveal .grid-rows li:nth-child(even)::before { transition-delay: 90ms; }
+    .reveal .grid-rows li:nth-child(even) > * { transition-delay: 270ms; }
+
+    /* The sharing screen squares up from perspective. */
+    .reveal .section-media img { transition: transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 500ms ease-out; }
+    .reveal .section-media:not(.is-in) img {
+        opacity: 0.4;
+        transform: rotateY(-18deg) rotateX(5deg) translateZ(-40px);
+    }
+
+    /* The price figure arrives from below its own line. */
+    .reveal .price-figure span { transition: transform 640ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .reveal .price-terms { transition: opacity 480ms ease-out 160ms, transform 480ms ease-out 160ms; }
+    .reveal .price-row:not(.is-in) .price-figure span { transform: translateY(105%); }
+    .reveal .price-row:not(.is-in) .price-terms { opacity: 0; transform: translateY(8px); }
+}
+
+/* Reduced motion: no animation, no transition; every element in its final
+   state. The scene keeps its depth in the opening pose. */
+@media (prefers-reduced-motion: reduce) {
+    .hero-media { --p: 0 !important; --rx: 0deg !important; --ry: 0deg !important; }
+}
+
+@keyframes strip-in {
+    from { opacity: 0; transform: translateZ(calc(var(--w) * -0.3)); }
+}
+
+@keyframes phone-rise {
+    from { transform: translateY(calc(var(--hv) * 0.22)); }
+}
+
+@keyframes card-lift {
+    from { transform: translateZ(calc(-1 * var(--lift))); }
+}
+
+@keyframes shadow-in {
+    from { opacity: 0; }
+}
+
+@keyframes copy-in {
+    from { opacity: 0; transform: translateY(8px); }
+}
+
+@keyframes card-press {
+    40% { transform: translateZ(calc(var(--lift) * -0.45)); }
+}
+
+@keyframes press {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(0.6); }
+    40% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(1.25); }
+}
+
+@keyframes mark-fill {
+    50% { transform: scale(1.35); }
 }
